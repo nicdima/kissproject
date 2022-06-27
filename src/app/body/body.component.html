@@ -1,0 +1,35 @@
+<main>
+  <picture class="cover">
+    <img src="https://picsum.photos/1920/" />
+  </picture>
+  <picture class="profile">
+    <img src="https://i.pravatar.cc/400?img=7" />
+  </picture>
+  <hr />
+  <app-search></app-search>
+  <article class="article">
+    <section *ngFor="let source of allsources" class="card">
+      <mat-card class="single-card">
+        <picture>
+          <img
+            mat-card-image
+            src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+            alt="Photo of a Shiba Inu"
+        /></picture>
+        <mat-card-title>{{ source.name }}</mat-card-title>
+        <mat-card-content>
+          <p>
+            {{ source.description }}
+          </p>
+          <p>
+            <mat-icon aria-hidden="false" aria-label="Category"
+              >category</mat-icon
+            >
+            {{ source.category }}
+          </p>
+        </mat-card-content>
+      </mat-card>
+    </section>
+    <app-pagination></app-pagination>
+  </article>
+</main>
